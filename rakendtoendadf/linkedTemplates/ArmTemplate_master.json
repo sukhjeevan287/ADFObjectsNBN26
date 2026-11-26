@@ -1,0 +1,554 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "rakendtoendadf"
+		},
+		"ADLS_Csv_file_Source_to_Desti_B_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS_Csv_file_Source_to_Desti_B'"
+		},
+		"Aditi_AzureDataLakeStorageLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Aditi_AzureDataLakeStorageLS'"
+		},
+		"Aditi_AzureSqlDatabaseLS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Aditi_AzureSqlDatabaseLS'"
+		},
+		"Ambica_AzuresqldatabaseLS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Ambica_AzuresqldatabaseLS'"
+		},
+		"Ambica_adlsgen_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ambica_adlsgen'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorageLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageLS'"
+		},
+		"AzureSqlDatabaseLS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabaseLS'"
+		},
+		"AzureSqlDatabaseLSA_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabaseLSA'"
+		},
+		"AzureSqlDatabaseLSEveningBatch_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabaseLSEveningBatch'"
+		},
+		"CopySQLfromBlob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CopySQLfromBlob'"
+		},
+		"LS_Azure_Sql_Database_Copy_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_Azure_Sql_Database_Copy'"
+		},
+		"Manoj_AzureDataLakeStorageLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Manoj_AzureDataLakeStorageLS'"
+		},
+		"Prateek_AzureDataLakeStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Prateek_AzureDataLakeStorage'"
+		},
+		"Shailesh_Azure_sql_db_copy_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Shailesh_Azure_sql_db_copy'"
+		},
+		"abrar_AzureDataLakeStorage1LS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'abrar_AzureDataLakeStorage1LS'"
+		},
+		"mukund_AzureDataLakeStorageLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'mukund_AzureDataLakeStorageLS'"
+		},
+		"rak_ls_AzureSqlDatabase_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'rak_ls_AzureSqlDatabase'"
+		},
+		"sai_AzureDataLakeStorageLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sai_AzureDataLakeStorageLS'"
+		},
+		"sai_AzureSqlDatabaseLS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'sai_AzureSqlDatabaseLS'"
+		},
+		"ADLS_Csv_file_Source_to_Desti_B_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"Aditi_AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"Aditi_AzureSqlDatabaseLS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"Aditi_AzureSqlDatabaseLS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"Aditi_AzureSqlDatabaseLS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"Ambica_AzuresqldatabaseLS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"Ambica_AzuresqldatabaseLS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"Ambica_AzuresqldatabaseLS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"Ambica_adlsgen_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabaseLS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"AzureSqlDatabaseLS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"AzureSqlDatabaseLS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"AzureSqlDatabaseLSA_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"AzureSqlDatabaseLSA_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"AzureSqlDatabaseLSA_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"LS_Azure_Sql_Database_Copy_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"LS_Azure_Sql_Database_Copy_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"LS_Azure_Sql_Database_Copy_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"Manoj_AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net"
+		},
+		"Prateek_AzureDataLakeStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"Shailesh_Azure_sql_db_copy_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"Shailesh_Azure_sql_db_copy_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"Shailesh_Azure_sql_db_copy_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"abrar_AzureDataLakeStorage1LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"mukund_AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"rak_ls_AzureSqlDatabase_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"rak_ls_AzureSqlDatabase_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"rak_ls_AzureSqlDatabase_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"sai_AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"sai_AzureSqlDatabaseLS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "mydevserver001.database.windows.net"
+		},
+		"sai_AzureSqlDatabaseLS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adventureworks"
+		},
+		"sai_AzureSqlDatabaseLS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dbadmin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "rakendtoendadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_Csv_file_Source_to_Desti_B_accountKey": {
+						"value": "[parameters('ADLS_Csv_file_Source_to_Desti_B_accountKey')]"
+					},
+					"Aditi_AzureDataLakeStorageLS_accountKey": {
+						"value": "[parameters('Aditi_AzureDataLakeStorageLS_accountKey')]"
+					},
+					"Aditi_AzureSqlDatabaseLS_password": {
+						"value": "[parameters('Aditi_AzureSqlDatabaseLS_password')]"
+					},
+					"Ambica_AzuresqldatabaseLS_password": {
+						"value": "[parameters('Ambica_AzuresqldatabaseLS_password')]"
+					},
+					"Ambica_adlsgen_accountKey": {
+						"value": "[parameters('Ambica_adlsgen_accountKey')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataLakeStorageLS_accountKey": {
+						"value": "[parameters('AzureDataLakeStorageLS_accountKey')]"
+					},
+					"AzureSqlDatabaseLS_password": {
+						"value": "[parameters('AzureSqlDatabaseLS_password')]"
+					},
+					"AzureSqlDatabaseLSA_password": {
+						"value": "[parameters('AzureSqlDatabaseLSA_password')]"
+					},
+					"AzureSqlDatabaseLSEveningBatch_password": {
+						"value": "[parameters('AzureSqlDatabaseLSEveningBatch_password')]"
+					},
+					"CopySQLfromBlob_connectionString": {
+						"value": "[parameters('CopySQLfromBlob_connectionString')]"
+					},
+					"LS_Azure_Sql_Database_Copy_password": {
+						"value": "[parameters('LS_Azure_Sql_Database_Copy_password')]"
+					},
+					"Manoj_AzureDataLakeStorageLS_accountKey": {
+						"value": "[parameters('Manoj_AzureDataLakeStorageLS_accountKey')]"
+					},
+					"Prateek_AzureDataLakeStorage_accountKey": {
+						"value": "[parameters('Prateek_AzureDataLakeStorage_accountKey')]"
+					},
+					"Shailesh_Azure_sql_db_copy_password": {
+						"value": "[parameters('Shailesh_Azure_sql_db_copy_password')]"
+					},
+					"abrar_AzureDataLakeStorage1LS_accountKey": {
+						"value": "[parameters('abrar_AzureDataLakeStorage1LS_accountKey')]"
+					},
+					"mukund_AzureDataLakeStorageLS_accountKey": {
+						"value": "[parameters('mukund_AzureDataLakeStorageLS_accountKey')]"
+					},
+					"rak_ls_AzureSqlDatabase_password": {
+						"value": "[parameters('rak_ls_AzureSqlDatabase_password')]"
+					},
+					"ADLS_Csv_file_Source_to_Desti_B_properties_typeProperties_url": {
+						"value": "[parameters('ADLS_Csv_file_Source_to_Desti_B_properties_typeProperties_url')]"
+					},
+					"Aditi_AzureDataLakeStorageLS_properties_typeProperties_url": {
+						"value": "[parameters('Aditi_AzureDataLakeStorageLS_properties_typeProperties_url')]"
+					},
+					"Aditi_AzureSqlDatabaseLS_properties_typeProperties_server": {
+						"value": "[parameters('Aditi_AzureSqlDatabaseLS_properties_typeProperties_server')]"
+					},
+					"Aditi_AzureSqlDatabaseLS_properties_typeProperties_database": {
+						"value": "[parameters('Aditi_AzureSqlDatabaseLS_properties_typeProperties_database')]"
+					},
+					"Aditi_AzureSqlDatabaseLS_properties_typeProperties_userName": {
+						"value": "[parameters('Aditi_AzureSqlDatabaseLS_properties_typeProperties_userName')]"
+					},
+					"Ambica_AzuresqldatabaseLS_properties_typeProperties_server": {
+						"value": "[parameters('Ambica_AzuresqldatabaseLS_properties_typeProperties_server')]"
+					},
+					"Ambica_AzuresqldatabaseLS_properties_typeProperties_database": {
+						"value": "[parameters('Ambica_AzuresqldatabaseLS_properties_typeProperties_database')]"
+					},
+					"Ambica_AzuresqldatabaseLS_properties_typeProperties_userName": {
+						"value": "[parameters('Ambica_AzuresqldatabaseLS_properties_typeProperties_userName')]"
+					},
+					"Ambica_adlsgen_properties_typeProperties_url": {
+						"value": "[parameters('Ambica_adlsgen_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorageLS_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageLS_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabaseLS_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabaseLS_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabaseLS_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabaseLS_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabaseLS_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabaseLS_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabaseLSA_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabaseLSA_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabaseLSA_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabaseLSA_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabaseLSA_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabaseLSA_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabaseLSEveningBatch_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabaseLSEveningBatch_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabaseLSEveningBatch_properties_typeProperties_userName')]"
+					},
+					"LS_Azure_Sql_Database_Copy_properties_typeProperties_server": {
+						"value": "[parameters('LS_Azure_Sql_Database_Copy_properties_typeProperties_server')]"
+					},
+					"LS_Azure_Sql_Database_Copy_properties_typeProperties_database": {
+						"value": "[parameters('LS_Azure_Sql_Database_Copy_properties_typeProperties_database')]"
+					},
+					"LS_Azure_Sql_Database_Copy_properties_typeProperties_userName": {
+						"value": "[parameters('LS_Azure_Sql_Database_Copy_properties_typeProperties_userName')]"
+					},
+					"Manoj_AzureDataLakeStorageLS_properties_typeProperties_url": {
+						"value": "[parameters('Manoj_AzureDataLakeStorageLS_properties_typeProperties_url')]"
+					},
+					"Prateek_AzureDataLakeStorage_properties_typeProperties_url": {
+						"value": "[parameters('Prateek_AzureDataLakeStorage_properties_typeProperties_url')]"
+					},
+					"Shailesh_Azure_sql_db_copy_properties_typeProperties_server": {
+						"value": "[parameters('Shailesh_Azure_sql_db_copy_properties_typeProperties_server')]"
+					},
+					"Shailesh_Azure_sql_db_copy_properties_typeProperties_database": {
+						"value": "[parameters('Shailesh_Azure_sql_db_copy_properties_typeProperties_database')]"
+					},
+					"Shailesh_Azure_sql_db_copy_properties_typeProperties_userName": {
+						"value": "[parameters('Shailesh_Azure_sql_db_copy_properties_typeProperties_userName')]"
+					},
+					"abrar_AzureDataLakeStorage1LS_properties_typeProperties_url": {
+						"value": "[parameters('abrar_AzureDataLakeStorage1LS_properties_typeProperties_url')]"
+					},
+					"mukund_AzureDataLakeStorageLS_properties_typeProperties_url": {
+						"value": "[parameters('mukund_AzureDataLakeStorageLS_properties_typeProperties_url')]"
+					},
+					"rak_ls_AzureSqlDatabase_properties_typeProperties_server": {
+						"value": "[parameters('rak_ls_AzureSqlDatabase_properties_typeProperties_server')]"
+					},
+					"rak_ls_AzureSqlDatabase_properties_typeProperties_database": {
+						"value": "[parameters('rak_ls_AzureSqlDatabase_properties_typeProperties_database')]"
+					},
+					"rak_ls_AzureSqlDatabase_properties_typeProperties_userName": {
+						"value": "[parameters('rak_ls_AzureSqlDatabase_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "rakendtoendadf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"sai_AzureDataLakeStorageLS_accountKey": {
+						"value": "[parameters('sai_AzureDataLakeStorageLS_accountKey')]"
+					},
+					"sai_AzureSqlDatabaseLS_password": {
+						"value": "[parameters('sai_AzureSqlDatabaseLS_password')]"
+					},
+					"sai_AzureDataLakeStorageLS_properties_typeProperties_url": {
+						"value": "[parameters('sai_AzureDataLakeStorageLS_properties_typeProperties_url')]"
+					},
+					"sai_AzureSqlDatabaseLS_properties_typeProperties_server": {
+						"value": "[parameters('sai_AzureSqlDatabaseLS_properties_typeProperties_server')]"
+					},
+					"sai_AzureSqlDatabaseLS_properties_typeProperties_database": {
+						"value": "[parameters('sai_AzureSqlDatabaseLS_properties_typeProperties_database')]"
+					},
+					"sai_AzureSqlDatabaseLS_properties_typeProperties_userName": {
+						"value": "[parameters('sai_AzureSqlDatabaseLS_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rakendtoendadf_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "rakendtoendadf_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rakendtoendadf_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "rakendtoendadf_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rakendtoendadf_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "rakendtoendadf_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rakendtoendadf_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "rakendtoendadf_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rakendtoendadf_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "rakendtoendadf_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rakendtoendadf_ArmTemplate_5')]"
+			]
+		}
+	]
+}

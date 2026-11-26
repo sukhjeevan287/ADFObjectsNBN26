@@ -1,0 +1,183 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "rakendtoendadf"
+		},
+		"ADLS_Csv_file_Source_to_Desti_B_accountKey": {
+			"value": ""
+		},
+		"Aditi_AzureDataLakeStorageLS_accountKey": {
+			"value": ""
+		},
+		"Aditi_AzureSqlDatabaseLS_password": {
+			"value": ""
+		},
+		"Ambica_AzuresqldatabaseLS_password": {
+			"value": ""
+		},
+		"Ambica_adlsgen_accountKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorageLS_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabaseLS_password": {
+			"value": ""
+		},
+		"AzureSqlDatabaseLSA_password": {
+			"value": ""
+		},
+		"AzureSqlDatabaseLSEveningBatch_password": {
+			"value": ""
+		},
+		"CopySQLfromBlob_connectionString": {
+			"value": ""
+		},
+		"LS_Azure_Sql_Database_Copy_password": {
+			"value": ""
+		},
+		"Manoj_AzureDataLakeStorageLS_accountKey": {
+			"value": ""
+		},
+		"Prateek_AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"Shailesh_Azure_sql_db_copy_password": {
+			"value": ""
+		},
+		"abrar_AzureDataLakeStorage1LS_accountKey": {
+			"value": ""
+		},
+		"mukund_AzureDataLakeStorageLS_accountKey": {
+			"value": ""
+		},
+		"rak_ls_AzureSqlDatabase_password": {
+			"value": ""
+		},
+		"sai_AzureDataLakeStorageLS_accountKey": {
+			"value": ""
+		},
+		"sai_AzureSqlDatabaseLS_password": {
+			"value": ""
+		},
+		"ADLS_Csv_file_Source_to_Desti_B_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"Aditi_AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"Aditi_AzureSqlDatabaseLS_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"Aditi_AzureSqlDatabaseLS_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"Aditi_AzureSqlDatabaseLS_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"Ambica_AzuresqldatabaseLS_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"Ambica_AzuresqldatabaseLS_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"Ambica_AzuresqldatabaseLS_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"Ambica_adlsgen_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabaseLS_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"AzureSqlDatabaseLS_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"AzureSqlDatabaseLS_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"AzureSqlDatabaseLSA_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"AzureSqlDatabaseLSA_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"AzureSqlDatabaseLSA_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"AzureSqlDatabaseLSEveningBatch_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"LS_Azure_Sql_Database_Copy_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"LS_Azure_Sql_Database_Copy_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"LS_Azure_Sql_Database_Copy_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"Manoj_AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net"
+		},
+		"Prateek_AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"Shailesh_Azure_sql_db_copy_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"Shailesh_Azure_sql_db_copy_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"Shailesh_Azure_sql_db_copy_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"abrar_AzureDataLakeStorage1LS_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"mukund_AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"rak_ls_AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"rak_ls_AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"rak_ls_AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"sai_AzureDataLakeStorageLS_properties_typeProperties_url": {
+			"value": "https://storageaccount689.dfs.core.windows.net/"
+		},
+		"sai_AzureSqlDatabaseLS_properties_typeProperties_server": {
+			"value": "mydevserver001.database.windows.net"
+		},
+		"sai_AzureSqlDatabaseLS_properties_typeProperties_database": {
+			"value": "adventureworks"
+		},
+		"sai_AzureSqlDatabaseLS_properties_typeProperties_userName": {
+			"value": "dbadmin"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
