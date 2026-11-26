@@ -1,0 +1,27 @@
+{
+	"name": "DS_Orders_Sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_Csv_file_Source_to_Desti_B",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Copy_Activity"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "SalesLT.Address.txt",
+				"fileSystem": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

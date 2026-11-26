@@ -1,0 +1,32 @@
+{
+	"name": "sh_data_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "create_run_idi",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "run_id",
+					"value": {
+						"value": "@formatDateTime(utcNow(),'yyyyMMddHHmmss' )",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"run_id": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-11-23T11:24:59Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

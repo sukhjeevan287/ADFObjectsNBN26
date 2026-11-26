@@ -1,0 +1,16 @@
+{
+	"name": "rakendtoendadf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true,
+			"isExplicitlySet": false
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9c5a8e3e-230e-464f-9bb8-852fcf206633",
+		"tenantId": "58d6f5c1-9adb-4393-a73b-55c0273b4969"
+	}
+}

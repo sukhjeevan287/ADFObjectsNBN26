@@ -1,0 +1,17 @@
+{
+	"name": "Copy_Target_DB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "Sample"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

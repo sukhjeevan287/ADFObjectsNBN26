@@ -1,0 +1,24 @@
+{
+	"name": "godl_ds_hello_sink_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mukund_AzureDataLakeStorageLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "godl_copied_csv",
+				"fileSystem": "godl-sink"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,17 @@
+{
+	"name": "sai_AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sai_AzureSqlDatabaseLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "Product"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
